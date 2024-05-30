@@ -1,7 +1,7 @@
 function Navbar(){
     return(
         <>
-        <h1>Kajra</h1>
+        <h1>Dream 11</h1>
         </>
     )
 }
