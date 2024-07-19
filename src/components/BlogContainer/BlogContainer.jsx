@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import fetchBlogData from '../../services/blog.service';
 
-function Cards() {
+function BlogContainer() {
   const [blogs, setBlogs] = useState([]);
 
   useEffect(()=>{
@@ -55,4 +55,4 @@ function Cards() {
   );
 }
 
-export default Cards;
+export default BlogContainer;

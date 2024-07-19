@@ -1,4 +1,4 @@
-function Footerdata() {
+function Footer() {
   return (
     <>
       <footer class="bg-black dark:bg-gray-900">
@@ -174,4 +174,4 @@ function Footerdata() {
   );
 }
 
-export default Footerdata;
+export default Footer;

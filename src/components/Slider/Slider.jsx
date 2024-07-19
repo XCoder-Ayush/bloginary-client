@@ -1,6 +1,6 @@
-import videobg from '../Slider/happy.mp4';
+import videobg from '../../assets/happy.mp4';
 
-function Jumpotron(){
+function Slider(){
   return (
     <>
     <div className="main">
@@ -13,4 +13,4 @@ function Jumpotron(){
   )
 }
 
-export default Jumpotron;
+export default Slider;
