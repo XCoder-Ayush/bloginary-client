@@ -1,9 +1,0 @@
-export default async function overViewData(){
-    const overview = [
-      { id: 1, title: 'Web Development', description: 'Web development refers to the creating, building, and maintaining of websites. It includes aspects such as web design, web publishing, web programming, and database management. It is the creation of an application that works over the internet i.e. websites', image:'https://bairesdev.mo.cloudinary.net/blog/2022/09/website-programming-and-coding-web-development-and-coding-3d-vector-vector-id1301010987-1.jpg?tx=w_1920,q_auto' },
-      { id: 2, title: 'App Development', description: 'While faster than C++, Python is sufficient for games with basic graphics, gameplay, and AI requirements. Python simplifies development compared to lower-level languages, enabling faster iteration. Many game frameworks like Pygame and Panda3D use Python under the hood' , image:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBpP1o2-TrOwoTp2llMjivO9p6BdlU-6C_5QHvWUrWaYAdBZ0ZVuWp1Ny2ef8HGOGiFE0&usqp=CAU"},
-      { id: 3, title: 'SEO Optimization', description: 'Mobile application development is the process of making software for smartphones, tablets and digital assistants, most commonly for the Android and iOS operating systems. The software can be preinstalled on the device, downloaded from a mobile app store or accessed through a mobile web browser. search engine rankings.' ,image:"https://assets-global.website-files.com/615af81f65d1ab72d2969269/62efdf9840dca733692cdd48_web%20dev%20basics.jpg" },
-    ];
-    //Actual blog data will came from rest api
-   return overview;
-  }
