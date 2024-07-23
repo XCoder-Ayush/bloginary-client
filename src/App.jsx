@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import viteLogo from '/vite.svg'
+// import { useState } from 'react'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
 import BlogContainer from './components/BlogContainer/BlogContainer'
@@ -7,6 +7,7 @@ import './index.css'
 import Slider from './components/Slider/Slider'
 import Banner from './components/Banner/Banner'
 import Footer from './components/Footer/Footer'
+// import HomePage from './pages/HomePage'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
     <Banner/>
     <br></br>
     <Footer/>
+    {/* <HomePage/> */}
     </>
   )
 }
