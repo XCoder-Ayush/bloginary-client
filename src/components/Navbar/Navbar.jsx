@@ -8,6 +8,7 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 
+import { Link } from 'react-router-dom';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 
@@ -18,10 +19,10 @@ function Navbar() {
         <NavigationMenu>
           <NavigationMenuList class="flex space-x-4">
             <NavigationMenuItem>
-              <NavigationMenuTrigger>Home</NavigationMenuTrigger>
-              <NavigationMenuTrigger>Blogs</NavigationMenuTrigger>
-              <NavigationMenuTrigger>Services</NavigationMenuTrigger>
-              <NavigationMenuTrigger>Support</NavigationMenuTrigger>
+              <NavigationMenuTrigger><Link to="/Home">Home</Link></NavigationMenuTrigger>
+              <NavigationMenuTrigger><Link to="/Blogs">Blogs</Link></NavigationMenuTrigger>
+              <NavigationMenuTrigger><Link to="/Services">Services</Link></NavigationMenuTrigger>
+              <NavigationMenuTrigger><Link to="/Support">Support</Link></NavigationMenuTrigger>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
