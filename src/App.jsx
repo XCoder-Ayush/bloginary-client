@@ -7,6 +7,7 @@ import Blogs from './pages/Blogs';
 import Services from './pages/Services';
 import Support from './pages/Support';
 import Landing from './pages/Landing';
+import Blogstory from './pages/Blogstory';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="Blogs" element={<Blogs />} />
           <Route path="Services" element={<Services />} />
           <Route path="Support" element={<Support />} />
+          <Route path="Blogstory" element={<Blogstory/>}/>
         </Routes>
       </BrowserRouter>
     </>

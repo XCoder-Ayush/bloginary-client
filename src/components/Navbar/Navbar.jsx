@@ -19,10 +19,18 @@ function Navbar() {
         <NavigationMenu>
           <NavigationMenuList class="flex space-x-4">
             <NavigationMenuItem>
-              <NavigationMenuTrigger><Link to="/Home">Home</Link></NavigationMenuTrigger>
-              <NavigationMenuTrigger><Link to="/Blogs">Blogs</Link></NavigationMenuTrigger>
-              <NavigationMenuTrigger><Link to="/Services">Services</Link></NavigationMenuTrigger>
-              <NavigationMenuTrigger><Link to="/Support">Support</Link></NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link to="/Home">Home</Link>
+              </NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link to="/Blogs">Blogs</Link>
+              </NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link to="/Services">Services</Link>
+              </NavigationMenuTrigger>
+              <NavigationMenuTrigger>
+                <Link to="/Support">Support</Link>
+              </NavigationMenuTrigger>
             </NavigationMenuItem>
           </NavigationMenuList>
         </NavigationMenu>
