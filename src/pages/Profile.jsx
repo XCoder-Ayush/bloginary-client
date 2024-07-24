@@ -4,7 +4,7 @@ import DropdownList from "../components/DropdownList/DropdownList";
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
-const ProfilePage = () => {
+const Profile = () => {
     return(
         <>
         <Navbar/>
@@ -19,4 +19,4 @@ const ProfilePage = () => {
     );
 }
 
-export default ProfilePage;
+export default Profile;
