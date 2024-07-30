@@ -9,11 +9,10 @@ import Footer from '../components/Footer/Footer';
 function Writeblog() {
   const editor = useRef(null);
   const [content, setContent] = useState('');
-  const [title,setTitle]=useState('')
+  const [title, setTitle] = useState('');
   const [isEditorVisible, setIsEditorVisible] = useState(false);
 
-  useEffect(() => {
-  }, [content]);
+  useEffect(() => {}, [content]);
 
   const editorContainerStyle = {
     height: 'auto',
@@ -32,21 +31,20 @@ function Writeblog() {
     setIsEditorVisible(!isEditorVisible);
   };
 
-
   return (
     <>
-      <div className="flex items-center justify-end gap-x-20" >
-      <button
-    disabled={title.length === 0 && content.length==0}
-    type="button"
-    className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none focus:ring-4 ${
-      title.length === 0  && content.length==0
-        ? 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'
-        : 'bg-green-800 hover:bg-green-900 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-700 dark:focus:ring-green-700 dark:border-green-700'
-    }`}
-  >
-    Publish
-  </button>
+      <div className="flex items-center justify-end gap-x-20">
+        <button
+          disabled={title.length === 0 && content.length == 0}
+          type="button"
+          className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none focus:ring-4 ${
+            title.length === 0 && content.length == 0
+              ? 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'
+              : 'bg-green-800 hover:bg-green-900 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-700 dark:focus:ring-green-700 dark:border-green-700'
+          }`}
+        >
+          Publish
+        </button>
         <svg
           className="w-6 h-6 text-gray-800 dark:text-white"
           aria-hidden="true"
@@ -69,14 +67,16 @@ function Writeblog() {
         </Avatar>
       </div>
       <br />
-      <p class="text-4xl text-gray-500 dark:text-white ml-28">Give Your Blog A Title</p>
+      <p class="text-4xl text-gray-500 dark:text-white ml-28">
+        Give Your Blog A Title
+      </p>
       <br></br>
       <div style={wrapperStyle}>
         <div style={editorContainerStyle}>
           <JoditEditor
-           ref={editor}
+            ref={editor}
             value={title}
-           onChange={(newContent) => setTitle(newContent)}
+            onChange={(newContent) => setTitle(newContent)}
           />
         </div>
       </div>
@@ -101,7 +101,9 @@ function Writeblog() {
           d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
         />
       </svg>
-      <p class="text-4xl text-gray-500 dark:text-white ml-28">Write Your Blog Here:</p>
+      <p class="text-4xl text-gray-500 dark:text-white ml-28">
+        Write Your Blog Here:
+      </p>
       <br></br>
       {isEditorVisible && (
         <div style={wrapperStyle}>
