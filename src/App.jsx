@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
-import viteLogo from '/vite.svg';
+// import viteLogo from '/vite.svg';
 import './index.css';
 import Home from './pages/Home';
 import Blogs from './pages/Blogs';
