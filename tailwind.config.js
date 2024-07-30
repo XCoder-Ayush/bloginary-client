@@ -71,6 +71,9 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      padding: {
+        'custom-clamp': 'clamp(24px, 24px + 100vw - 1080px, 40px)',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
