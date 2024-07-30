@@ -7,7 +7,7 @@ import Blogs from './pages/Blogs';
 import Services from './pages/Services';
 import Support from './pages/Support';
 import Landing from './pages/Landing';
-import Writeblog from './pages/Writeblog';
+import Profile from './pages/Profile';
 
 function App() {
   return (
@@ -15,11 +15,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<Landing />} />
-          <Route path="home" element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="services" element={<Services />} />
-          <Route path="support" element={<Support />} />
-          <Route path="writeblogs" element={<Writeblog/>}/>
+          <Route path="Home" element={<Home />} />
+          <Route path="Blogs" element={<Blogs />} />
+          <Route path="Services" element={<Services />} />
+          <Route path="Support" element={<Support />} />
+          <Route path="profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </>
