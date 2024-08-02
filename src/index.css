@@ -21,6 +21,6 @@ video{
     display:flex;
     flex-direction: column;
     justify-content: center;
-    alingn-items:center;
+    align-items:center;
     color: white;
 }

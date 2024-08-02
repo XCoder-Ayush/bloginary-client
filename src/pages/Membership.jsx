@@ -9,6 +9,13 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card"
+import {
+    Tooltip,
+    TooltipContent,
+    TooltipProvider,
+    TooltipTrigger,
+} from "@/components/ui/tooltip"
+
 import Navbar from "../components/Navbar/Navbar";
 import Footer from "../components/Footer/Footer";
 
@@ -18,20 +25,46 @@ const Membership = () => {
         <>
             <Navbar />
 
-            <div className="flex flex-col gap-8 py-10 px-40 items-center ">
+            <div className="flex flex-col gap-10 py-10 px-10 items-center sm:px-10 md:px-30 lg:px-20">
                 <div className="w-20 h-20">
                     <img className="object-cover w-full h-full" src="https://t4.ftcdn.net/jpg/03/49/37/73/360_F_349377375_ffnj0RHK52KsooH7IBdtpjNtdEP7bKM7.jpg" alt="" />
                 </div>
-                <div className="text-center">
-                    <span>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Commodi, corporis deleniti. Mollitia expedita debitis voluptatibus obcaecati maxime quibusdam, ut, nostrum rerum quos inventore assumenda! Voluptatibus aut vitae neque nam animi. Earum fuga perferendis officia!</span>
+                <div className="text-center w-3/4">
+                    <span className="font-sans font-medium">We warmly invite you to become a part of the Bloginary family! At Bloginary we are passionate about sharing stories, insights and knowledge with the world. Whether you're a experienced blogger or just starting out, there's a place for you here.</span>
                 </div>
-                <div className="flex gap-3 justify-center">
-                    <Button variant="outline" className="bg-black text-white rounded-xl">Pay Monthly</Button>
-                    <Button variant="outline" className="bg-black text-white rounded-xl">Pay Quatarly and save upto $10</Button>
-                    <Button variant="outline" className="bg-black text-white rounded-xl">Pay Annually and save upto $15</Button>
+                <div className="grid grid-cols-3 gap-5 justify-center">
+            
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Monthly</Button></TooltipTrigger>
+                            <TooltipContent className ="rounded-xl">
+                                <p className="font-medium p-0.5">Save upto $5</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Quaterly</Button></TooltipTrigger>
+                            <TooltipContent className ="rounded-xl">
+                                <p className="font-medium p-0.5">Save upto $10</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+
+                    <TooltipProvider>
+                        <Tooltip>
+                            <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Annually</Button></TooltipTrigger>
+                            <TooltipContent className ="rounded-xl">
+                                <p className="font-medium p-0.5">Save upto $20</p>
+                            </TooltipContent>
+                        </Tooltip>
+                    </TooltipProvider>
+                    
                 </div>
 
-                <div className="flex gap-5">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
+
                     <Card>
                         <CardHeader>
                             <CardTitle><span className="font-bold">Monthly</span></CardTitle>
@@ -51,16 +84,16 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Button</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
                         </CardFooter>
                     </Card>
 
                     <Card>
                         <CardHeader>
-                            <CardTitle><span className="font-bold">Quatarly</span></CardTitle>
+                            <CardTitle><span className="font-bold">Quaterly</span></CardTitle>
                             <CardDescription>
                                 <div className="flex">
-                                    <span className="text-5xl font-bold">$50</span><span className="flex items-end font-semibold">/ Quatarly</span>
+                                    <span className="text-5xl font-bold">$50</span><span className="flex items-end font-semibold">/ Quaterly</span>
                                 </div>
                             </CardDescription>
                         </CardHeader>
@@ -74,7 +107,7 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Button</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
                         </CardFooter>
                     </Card>
 
@@ -97,7 +130,7 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Button</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
                         </CardFooter>
                     </Card>
 
