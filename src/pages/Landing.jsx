@@ -1,8 +1,8 @@
 import Navbar from '../components/Navbar/Navbar';
 import BlogContainer from '../components/BlogContainer/BlogContainer';
 import Slider from '../components/Slider/Slider';
-import Banner from '../components/Banner/Banner';
 import Footer from '../components/Footer/Footer';
+import Poster from '../components/Poster/Poster';
 
 export default function Landing() {
   return (
@@ -12,7 +12,7 @@ export default function Landing() {
       <br></br>
       <BlogContainer />
       <br></br>
-      <Banner />
+      <Poster />
       <br></br>
       <Footer />
     </>
