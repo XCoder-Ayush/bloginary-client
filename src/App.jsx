@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Support from './pages/Support';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
+import Membership from './pages/Membership';
 import Write from './pages/Write';
 
 function App() {
@@ -21,7 +22,6 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="write-blog" element={<Write/>} />
         </Routes>
       </BrowserRouter>
     </>

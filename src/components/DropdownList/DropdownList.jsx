@@ -49,73 +49,12 @@ const DropdownList = () => {
         }));
     };
 
-    const handleRadioChange = (event, section) => {
-        setFormData(prevData => ({
-            ...prevData,
-            [section]: {
-                ...prevData[section],
-                gender: event.target.value,
-            },
-        }));
-    };
 
     const handleUpdate = (section) => {
         console.log('Update clicked for', section, formData[section]);
 
     };
-    // const [formData, setFormData] = useState({
-    //     firstName: '',
-    //     lastName: '',
-    //     company: '',
-    //     phone: '',
-    //     gender: 'male',
-    //     college: '',
-    //     major: '',
-    //     graduationYear: '',
-    //     jobProfile: '',
-    //     jobCompany: '',
-    //     github: '',
-    //     linkedIn: '',
-    //     twitter: ''
-    // });
 
-
-    // const handleChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setFormData({
-    //         ...formData,
-    //         [name]: value
-    //     });
-    // };
-
-    // const handleRadioChange = (event) => {
-    //     const { name, value } = event.target;
-    //     setFormData({
-    //         ...formData,
-    //         [name]: value
-    //     });
-    // };
-
-
-    // const handleBasicInfoSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('Basic Info submitted:', formData.firstName, formData.lastName, formData.company, formData.phone, formData.gender);
-    // };
-
-    // const handleEducationSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('Education submitted:', formData.college, formData.major, formData.graduationYear);
-    // };
-
-    // const handleJobSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('Job Info submitted:', formData.jobProfile, formData.jobCompany);
-    // };
-
-    // const handleExternalProfilesSubmit = (event) => {
-    //     event.preventDefault();
-    //     console.log('External Profiles submitted:', formData.github, formData.linkedIn, formData.twitter);
-    // };
 
     return (
         <>

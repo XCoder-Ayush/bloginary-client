@@ -1,4 +1,7 @@
-function Banner() {
+function Poster() {
+  
+  // console.log('Poster Component');
+
   return (
     <>
       <section className="bg-white dark:bg-gray-900">
@@ -50,4 +53,4 @@ function Banner() {
   );
 }
 
-export default Banner;
+export default Poster;
