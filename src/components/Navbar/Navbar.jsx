@@ -1,69 +1,100 @@
-import {
-  NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
-  NavigationMenuList,
-  NavigationMenuTrigger,
-  navigationMenuTriggerStyle,
-} from '@/components/ui/navigation-menu';
-
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <div className="w-full flex items-center">
-      <div className="flex-grow flex justify-center">
-        <NavigationMenu>
-          <NavigationMenuList className="flex space-x-4">
-            <NavigationMenuItem>
-              <NavigationMenuTrigger>
-                <Link to="/Home">Home</Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuTrigger>
-                <Link to="/Blogs">Blogs</Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuTrigger>
-                <Link to="/Services">Services</Link>
-              </NavigationMenuTrigger>
-              <NavigationMenuTrigger>
-                <Link to="/Support">Support</Link>
-              </NavigationMenuTrigger>
-            </NavigationMenuItem>
-          </NavigationMenuList>
-        </NavigationMenu>
-      </div>
-      
-      <div className="flex items-center ml-auto gap-x-4">
-        
-        <Button variant="destructive">Login</Button>
-        
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-        </Avatar>
-        
-        <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.193-.538 1.193H5.538c-.538 0-.538-.6-.538-1.193 0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365Zm-8.134 5.368a8.458 8.458 0 0 1 2.252-5.714m14.016 5.714a8.458 8.458 0 0 0-2.252-5.714M8.54 17.901a3.48 3.48 0 0 0 6.92 0H8.54Z"
-          />
-        </svg>
-      
-      </div>
-    </div>
+    <>
+      <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+        <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+          <span className="self-center text-2xl font-extrabold whitespace-nowrap dark:text-white">
+            BLOGINARY
+          </span>
+
+          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <Button
+              className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2 "
+              variant="destructive"
+            >
+              Login
+            </Button>
+
+            <button
+              onClick={toggleMenu}
+              type="button"
+              className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              aria-controls="navbar-sticky"
+              aria-expanded={isMenuOpen}
+            >
+              <span className="sr-only">Open main menu</span>
+              <svg
+                className="w-5 h-5"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 14"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M1 1h15M1 7h15M1 13h15"
+                />
+              </svg>
+            </button>
+          </div>
+
+          <div
+            className={`items-center justify-between w-full md:flex md:w-auto md:order-1 ${isMenuOpen ? '' : 'hidden'}`}
+            id="navbar-sticky"
+          >
+            <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+              <li>
+                <Link
+                  to="/Home"
+                  className="block py-2 px-3 text-black bg-slate-200 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
+                  aria-current="page"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Blogs"
+                  className="block py-2 px-3 text-gray-900 rounded  md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700 hover:bg-slate-500"
+                >
+                  Blogs
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Services"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Services
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/Support"
+                  className="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+                >
+                  Support
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </>
   );
 }
+
 export default Navbar;

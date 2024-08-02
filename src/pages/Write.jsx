@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
 import JoditEditor from 'jodit-react';
-import '../../...src/index.css';
 import { Button } from '@/components/ui/button';
 import Marquee from 'react-fast-marquee';
 import Footer from '../components/Footer/Footer';
 
-function Writeblog() {
+function Write() {
   const editor = useRef(null);
   const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
@@ -33,53 +32,51 @@ function Writeblog() {
 
   return (
     <>
-      <div className="flex items-center justify-end gap-x-20">
-        <button
-          disabled={title.length === 0 && content.length == 0}
-          type="button"
-          className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 focus:outline-none focus:ring-4 ${
-            title.length === 0 && content.length == 0
-              ? 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'
-              : 'bg-green-800 hover:bg-green-900 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-700 dark:focus:ring-green-700 dark:border-green-700'
-          }`}
-        >
-          Publish
-        </button>
-        <svg
-          className="w-6 h-6 text-gray-800 dark:text-white"
-          aria-hidden="true"
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="none"
-          viewBox="0 0 24 24"
-        >
-          <path
-            stroke="currentColor"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
-          />
-        </svg>
-        <Avatar>
-          <AvatarImage src="https://github.com/shadcn.png" />
-        </Avatar>
-      </div>
+       <div className="flex items-center justify-between gap-x-4 flex-wrap">
+      <button
+        disabled={title.length === 0 && content.length === 0}
+        type="button"
+        className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none focus:ring-4 ${
+          title.length === 0 && content.length === 0
+            ? 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'
+            : 'bg-green-800 hover:bg-green-900 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-700 dark:focus:ring-green-700 dark:border-green-700'
+        }`}
+      >
+        Publish
+      </button>
+      <svg
+        className="w-6 h-6 text-gray-800 dark:text-white mb-2"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        fill="none"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
+        />
+      </svg>
+      <Avatar>
+        <AvatarImage src="https://github.com/shadcn.png" />
+      </Avatar>
+    </div>
+
       <br />
       <p class="text-4xl text-gray-500 dark:text-white ml-28">
         Give Your Blog A Title
       </p>
       <br></br>
-      <div style={wrapperStyle}>
-        <div style={editorContainerStyle}>
-          <JoditEditor
-            ref={editor}
-            value={title}
-            onChange={(newContent) => setTitle(newContent)}
-          />
-        </div>
-      </div>
+      <textarea
+        className="blog-title-textarea"
+        placeholder="Write your blog title here..."
+      />
+        
+     
 
       <br></br>
       <br></br>
@@ -144,4 +141,4 @@ function Writeblog() {
   );
 }
 
-export default Writeblog;
+export default Write;
