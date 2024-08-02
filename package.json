@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "homepage": "https://XCoder-Ayush.github.io/bloginary-client",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "@radix-ui/react-accordion": "^1.2.0",
