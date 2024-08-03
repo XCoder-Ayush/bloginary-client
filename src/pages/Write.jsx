@@ -1,119 +1,101 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef } from 'react';
 import { Avatar, AvatarImage } from '@/components/ui/avatar';
-import JoditEditor from 'jodit-react';
 import { Button } from '@/components/ui/button';
 import Marquee from 'react-fast-marquee';
 import Footer from '../components/Footer/Footer';
+import { Editor } from '@tinymce/tinymce-react';
 
 function Write() {
-  const editor = useRef(null);
-  const [content, setContent] = useState('');
   const [title, setTitle] = useState('');
-  const [isEditorVisible, setIsEditorVisible] = useState(false);
+  const [content, setContent] = useState('');
+  const editorRef = useRef(null);
 
-  useEffect(() => {}, [content]);
-
-  const editorContainerStyle = {
-    height: 'auto',
-    width: '100%',
+  const handleTitleChange = (e) => {
+    setTitle(e.target.value);
   };
 
-  const wrapperStyle = {
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    width: '90%',
-    margin: 'auto',
+  const handleEditorChange = (content, editor) => {
+    setContent(content);
   };
 
-  const toggleEditorVisibility = () => {
-    setIsEditorVisible(!isEditorVisible);
+  const handlePublishClick = () => {
+    if (editorRef.current) {
+      console.log(editorRef.current.getContent());
+    }
+    // Add your publish logic here
   };
 
   return (
     <>
-       <div className="flex items-center justify-between gap-x-4 flex-wrap">
-      <button
-        disabled={title.length === 0 && content.length === 0}
-        type="button"
-        className={`text-white font-medium rounded-lg text-sm px-5 py-2.5 mb-2 focus:outline-none focus:ring-4 ${
-          title.length === 0 && content.length === 0
-            ? 'bg-gray-800 hover:bg-gray-900 focus:ring-gray-300 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-700 dark:border-gray-700'
-            : 'bg-green-800 hover:bg-green-900 focus:ring-green-300 dark:bg-green-800 dark:hover:bg-green-700 dark:focus:ring-green-700 dark:border-green-700'
-        }`}
-      >
-        Publish
-      </button>
-      <svg
-        className="w-6 h-6 text-gray-800 dark:text-white mb-2"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
-        />
-      </svg>
-      <Avatar>
-        <AvatarImage src="https://github.com/shadcn.png" />
-      </Avatar>
-    </div>
-
-      <br />
-      <p class="text-4xl text-gray-500 dark:text-white ml-28">
-        Give Your Blog A Title
-      </p>
-      <br></br>
-      <textarea
-        className="blog-title-textarea"
-        placeholder="Write your blog title here..."
-      />
-        
-     
-
-      <br></br>
-      <br></br>
-      <svg
-        className="w-6 h-6 text-gray-800 dark:text-white cursor-pointer ml-28"
-        aria-hidden="true"
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        fill="none"
-        viewBox="0 0 24 24"
-        onClick={toggleEditorVisibility}
-      >
-        <path
-          stroke="currentColor"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth="2"
-          d="M12 7.757v8.486M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
-        />
-      </svg>
-      <p class="text-4xl text-gray-500 dark:text-white ml-28">
-        Write Your Blog Here:
-      </p>
-      <br></br>
-      {isEditorVisible && (
-        <div style={wrapperStyle}>
-          <div style={editorContainerStyle}>
-            <JoditEditor
-              ref={editor}
-              value={content}
-              onChange={(newTitle) => setContent(newTitle)}
-            />
+      <nav className="bg-black text-white p-4">
+        <div className="container mx-auto flex items-center justify-between">
+          <div className="text-xl font-bold">Logo</div>
+          <div className="flex items-center justify-between gap-x-4 flex-wrap">
+            <button
+              type="button"
+              className="px-2 py-2 mt-2 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
+              onClick={handlePublishClick}
+              disabled={content.trim() === ''}
+            >
+              Publish
+            </button>
+            <svg
+              className="w-6 h-6 text-white dark:text-white mb-2"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
+              />
+            </svg>
+            <Avatar>
+              <AvatarImage src="https://github.com/shadcn.png" />
+            </Avatar>
           </div>
         </div>
-      )}
-      <p className="text-2xl text-gray-500 dark:text-white text-center">
+      </nav>
+
+      <div className="mt-8 mx-4 sm:mx-12 md:mx-20 lg:mx-28">
+        <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-gray-500 dark:text-white">
+          Give Your Blog A Title
+        </p>
+
+        <div className="flex  mt-5">
+          <textarea
+            className="w-11/12 md:w-3/4 lg:w-1/2 p-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
+            placeholder="Enter the title of your blog..."
+            rows={2}
+            value={title}
+            onChange={handleTitleChange}
+          ></textarea>
+        </div>
+
+        <p className="mt-8 text-4xl text-gray-500 dark:text-white">
+          Write Your Blog Here:
+        </p>
+
+        <div className="mt-5">
+          <Editor
+            apiKey="c7xke9kmfoxqf9ewj2hblj9swaqhl06zojvcs0oii1vza5w7"
+            onInit={(_evt, editor) => (editorRef.current = editor)}
+            onEditorChange={handleEditorChange}
+            init={{
+              height: 300,
+              width: '100%',
+            }}
+          />
+        </div>
+      </div>
+
+      <p className="mt-8 text-2xl text-gray-500 dark:text-white text-center">
         Our Sponsors
       </p>
       <Marquee>
@@ -135,7 +117,6 @@ function Write() {
           class="h-auto max-w-xs"
         />
       </Marquee>
-      <br></br>
       <Footer />
     </>
   );

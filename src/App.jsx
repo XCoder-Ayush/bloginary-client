@@ -22,6 +22,8 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
+          <Route path='write-blog' element={<Write/>} />
+          <Route path='membership-payment' element={<Membership/>} />
         </Routes>
       </BrowserRouter>
     </>

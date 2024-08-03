@@ -17,14 +17,7 @@ function Navbar() {
             BLOGINARY
           </span>
 
-          <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-            <Button
-              className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2 "
-              variant="destructive"
-            >
-              Login
-            </Button>
-
+          <div className="flex md:hidden">
             <button
               onClick={toggleMenu}
               type="button"
@@ -89,7 +82,24 @@ function Navbar() {
                   Support
                 </Link>
               </li>
+              <li className="md:hidden">
+                <Button
+                  className="px-8 py-4 mt-2 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
+                  variant="destructive"
+                >
+                  Login
+                </Button>
+              </li>
             </ul>
+          </div>
+
+          <div className="hidden md:flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+            <Button
+              className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
+              variant="destructive"
+            >
+              Login
+            </Button>
           </div>
         </div>
       </nav>

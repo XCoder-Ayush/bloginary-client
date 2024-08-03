@@ -3,7 +3,7 @@
 @tailwind utilities;
 /* @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Caveat:wght@400..700&display=swap'); */
 
-.jodit-status-bar{
+.tox-statusbar{
     visibility: hidden;
 }
 
