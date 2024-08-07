@@ -9,6 +9,7 @@ import Support from './pages/Support';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Membership from './pages/Membership';
+import Write from './pages/Write';
 
 function App() {
   return (
@@ -16,12 +17,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<Landing />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Blogs" element={<Blogs />} />
-          <Route path="Services" element={<Services />} />
-          <Route path="Support" element={<Support />} />
+          <Route path="home" element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="services" element={<Services />} />
+          <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="membership" element={<Membership />} />
+          <Route path='write-blog' element={<Write/>} />
+          <Route path='membership-payment' element={<Membership/>} />
         </Routes>
       </BrowserRouter>
     </>

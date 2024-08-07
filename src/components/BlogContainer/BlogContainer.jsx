@@ -4,35 +4,30 @@ import fetchBlogData from '../../services/blog.service';
 function BlogContainer() {
   const [blogs, setBlogs] = useState([]);
 
-  useEffect(()=>{
-  fetchBlogs()
-  },[])
+  useEffect(() => {
+    fetchBlogs();
+  }, []);
  
-    async function fetchBlogs() {
+  async function fetchBlogs() {
     try {
       const blogsFetched = await fetchBlogData();
-      // console.log(blogsFetched);
       setBlogs(blogsFetched);
-    } 
-
-    catch (error) {
+    } catch (error) {
       console.log(error);
     }
   }
 
-
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-        
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {blogs.length > 0 ? (
           blogs.map((blog) => (
             <div
               key={blog.id}
-              className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+              className="max-w-sm w-full p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
             >
               <a href={blog.link}>
-                <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                <h5 className="mb-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                   {blog.title}
                 </h5>
               </a>
@@ -48,7 +43,7 @@ function BlogContainer() {
             </div>
           ))
         ) : (
-          <p>No blogs available</p>
+          <p className="text-center w-full col-span-full">No blogs available</p>
         )}
       </div>
     </>
