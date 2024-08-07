@@ -29,4 +29,9 @@ video{
     align-items:center;
     color: white;
 }
+.no-focus:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
 
