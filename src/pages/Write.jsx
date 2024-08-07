@@ -27,7 +27,7 @@ function Write() {
     <>
       <nav className="bg-white text-black p-4">
         <div className="container mx-auto flex items-center justify-between flex-wrap">
-          <div className="text-xl font-bold">Logo</div>
+          <div className="text-2xl font-extrabold">BLOGINARY</div>
           <div className="flex items-center gap-x-4 flex-wrap w-full justify-end sm:w-auto">
             <button
               type="button"
@@ -66,16 +66,16 @@ function Write() {
         <div className="flex mt-5">
           <textarea
             className="w-11/12 md:w-3/4 lg:w-1/2 p-4 rounded-md focus:outline-none resize-none no-focus text-4xl"
-            placeholder="Enter the title of your blog..."
+            placeholder="Title"
             rows={2}
             value={title}
             onChange={handleTitleChange}
           ></textarea>
         </div>
 
-        <p className="mt-8 text-4xl text-gray-500 dark:text-white">
+        {/* <p className="mt-8 text-4xl text-gray-500 dark:text-white">
           Write Your Blog Here:
-        </p>
+        </p> */}
 
         <div className="mt-5">
           <Editor
@@ -99,7 +99,7 @@ function Write() {
           onClick={handlePublishClick}
           disabled={content.trim() === ''}
         >
-          Edit Blog
+          Save as Draft
         </button>
       </div>
     </>
