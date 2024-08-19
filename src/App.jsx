@@ -10,6 +10,8 @@ import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Membership from './pages/Membership';
 import Write from './pages/Write';
+import SignIn from './pages/Signin';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -24,8 +26,10 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path='write-blog' element={<Write/>} />
           <Route path='membership-payment' element={<Membership/>} />
+          <Route path='signIn' element={<SignIn/>}/>
         </Routes>
       </BrowserRouter>
+      <ToastContainer />
     </>
   );
 }
