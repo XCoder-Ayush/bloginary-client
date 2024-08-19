@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Support from './pages/Support';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
+import Blog from './pages/Blog';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="Services" element={<Services />} />
           <Route path="Support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
+          <Route path="Home/blog/:title" element={<Blog/>} />
         </Routes>
       </BrowserRouter>
     </>

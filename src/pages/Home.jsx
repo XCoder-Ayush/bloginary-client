@@ -52,7 +52,7 @@ const Home = () => {
       <HomePageNavBar />
       <div className="max-w-[1336px] m-auto h-full flex justify-evenly">
         <div className="mt-4 pr-4 max-w-[728px]">
-          <div className="pb-2">
+          <div className="ml-3 pb-2 text-sm">
             <ul className="flex border-b-2 border-gray-200 text-gray-500">
               <li className="m-[1.5px] pr-1 hover:text-black cursor-pointer text-2xl">+</li>
               <li className="m-1 p-1 hover:text-black cursor-pointer">
@@ -79,7 +79,7 @@ const Home = () => {
             <BlogCard />
           </div>
         </div>
-        <div className="border-s border-gray-200 pl-custom-clamp mt-4 max-w-[368px]">
+        <div className="border-s border-gray-200 pl-custom-clamp mt-4 max-w-[368px] hidden lg:block">
           <div>
             <h3 className="mb-4 text-gray-500 font-semibold">
               Recommended topics
