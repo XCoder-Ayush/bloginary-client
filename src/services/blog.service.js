@@ -7,7 +7,6 @@ export default async function fetchBlogData(){
     { id: 5, title: 'Node Js', description: 'Using the data in the runtime environment' },
     { id: 6, title: 'Three.js', description: '3d library helps to improve data' },
   ];
-
-  //Actual blog data will came from rest api
+//Actual blog data will came from rest api
  return blogs;
 }

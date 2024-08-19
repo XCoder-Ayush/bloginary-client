@@ -8,6 +8,8 @@ import Services from './pages/Services';
 import Support from './pages/Support';
 import Landing from './pages/Landing';
 import Profile from './pages/Profile';
+import Membership from './pages/Membership';
+import Write from './pages/Write';
 import Blog from './pages/Blog';
 
 function App() {
@@ -16,12 +18,11 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<Landing />} />
-          <Route path="Home" element={<Home />} />
-          <Route path="Blogs" element={<Blogs />} />
-          <Route path="Services" element={<Services />} />
-          <Route path="Support" element={<Support />} />
+          <Route path="home" element={<Home />} />
+          <Route path="blogs" element={<Blogs />} />
+          <Route path="services" element={<Services />} />
+          <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="Home/blog/:title" element={<Blog/>} />
         </Routes>
       </BrowserRouter>
     </>
