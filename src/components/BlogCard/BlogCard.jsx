@@ -36,11 +36,10 @@ const BlogCard = () => {
     }
   }
 
-  function urlPath(blogTitle) {
-    return blogTitle
-      .toLowerCase()
-      .replace(/[^a-z0-9]+/g, '-')
-      .replace(/^-+|-+$/g, '');
+  function urlPath(blog) {
+    let slug = blog?.title?.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    slug = slug + `-${blog.id}`
+    return slug;
   }
 
   return (
@@ -52,7 +51,7 @@ const BlogCard = () => {
             key={blogCard.id}
           >
             <Card className="border-none shadow-none">
-              <Link to={`blog/${urlPath(blogCard.title)}`}>
+              <Link to={`/blog/${blogCard.id}/${urlPath(blogCard)}`}>
                 <CardHeader>
                   <CardTitle>{blogCard.title}</CardTitle>
                   <CardDescription className="text-gray-500">

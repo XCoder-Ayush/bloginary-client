@@ -1,11 +1,11 @@
 export async function fetchBlogCardData(){
     const blogCards = [
-      { id: 1, title: 'Web Development', description: 'Building responsive and modern websites.',  date: 'Jan 10, 2015', likes: '32K', comments: 364},
-      { id: 2, title: 'App Development', description: 'Creating mobile applications for Android and iOS.', date: 'Feb 11, 2016', likes: '33K', comments: 365},
-      { id: 3, title: 'SEO Optimization', description: 'Improving search engine rankings.', date: 'Mar 13, 2017', likes: '34K', comments: 366},
-      { id: 4, title: 'Angular Js', description: 'Changing the world with define things', date: 'Apr 14, 2018', likes: '35K', comments: 367},
-      { id: 5, title: 'Node Js', description: 'Using the data in the runtime environment', date: 'May 15, 2019', likes: '36K', comments: 368},
-      { id: 6, title: 'Three.js', description: '3d library helps to improve data', date: 'Jul 16, 2020', likes: '37K', comments: 369}
+      { id: 1, title: 'Web Development', userId:"@Sayan", description: 'Building responsive and modern websites.',  date: 'Jan 10, 2015', likes: '32K', comments: 364},
+      { id: 2, title: 'App Development', userId:"@Amrik", description: 'Creating mobile applications for Android and iOS.', date: 'Feb 11, 2016', likes: '33K', comments: 365},
+      { id: 3, title: 'SEO Optimization', userId:"@Ayush", description: 'Improving search engine rankings.', date: 'Mar 13, 2017', likes: '34K', comments: 366},
+      { id: 4, title: 'Angular Js', userId:"@Snehangshu", description: 'Changing the world with define things', date: 'Apr 14, 2018', likes: '35K', comments: 367},
+      { id: 5, title: 'Node Js', userId:"@Pradyumna", description: 'Using the data in the runtime environment', date: 'May 15, 2019', likes: '36K', comments: 368},
+      { id: 6, title: 'Three.js', userId:"@Maalik", description: '3d library helps to improve data', date: 'Jul 16, 2020', likes: '37K', comments: 369}
     ];
   
     //Actual blog data will came from rest api
