@@ -34,7 +34,7 @@ const Membership = () => {
                 </div>
                 <div className="grid grid-cols-3 gap-5 justify-center">
             
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={100}>
                         <Tooltip>
                             <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Monthly</Button></TooltipTrigger>
                             <TooltipContent className ="rounded-xl">
@@ -43,7 +43,7 @@ const Membership = () => {
                         </Tooltip>
                     </TooltipProvider>
 
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={100}>
                         <Tooltip>
                             <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Quaterly</Button></TooltipTrigger>
                             <TooltipContent className ="rounded-xl">
@@ -52,7 +52,7 @@ const Membership = () => {
                         </Tooltip>
                     </TooltipProvider>
 
-                    <TooltipProvider>
+                    <TooltipProvider delayDuration={100}>
                         <Tooltip>
                             <TooltipTrigger><Button variant="outline" className="bg-black text-white rounded-xl">Pay Annually</Button></TooltipTrigger>
                             <TooltipContent className ="rounded-xl">
@@ -84,7 +84,7 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Subscribe</Button>
                         </CardFooter>
                     </Card>
 
@@ -107,7 +107,7 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Subscribe</Button>
                         </CardFooter>
                     </Card>
 
@@ -130,7 +130,7 @@ const Membership = () => {
                             </ul>
                         </CardContent>
                         <CardFooter>
-                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Select</Button>
+                            <Button variant="outline" className="bg-slate-800 text-white rounded-xl w-full">Subscribe</Button>
                         </CardFooter>
                     </Card>
 
