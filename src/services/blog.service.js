@@ -9,6 +9,5 @@ export default async function fetchBlogData(){
   ];
 //Actual blog data will came from rest api
 
-
  return blogs;
 }

@@ -93,7 +93,7 @@ function Navbar() {
         </div>
 
         <div className="hidden md:flex md:order-2 space-x-3">
-          <Link to="/signIn">
+          <Link to="/auth">
           <Button
             className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
             variant="destructive"
