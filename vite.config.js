@@ -8,10 +8,10 @@ export default defineConfig({
   base: '/bloginary-client/',
   resolve: {
     alias: {
-      '@': path.resolve(__dirname, './src'),
+      '@': path.resolve('./src'),
     },
   },
   build: {
-    outDir: path.resolve(__dirname, 'bloginary-client/dist'), // Output build to this directory
+    outDir: path.resolve(__dirname, '/bloginary-client/dist'),
   },
 });
