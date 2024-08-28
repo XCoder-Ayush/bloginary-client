@@ -12,6 +12,6 @@ export default defineConfig({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '/bloginary-client/dist'),
+    outDir: './dist',
   },
 });
