@@ -31,7 +31,8 @@
     "react-fast-marquee": "^1.6.5",
     "react-router-dom": "^6.25.1",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "zustand": "^4.5.5"
   },
   "devDependencies": {
     "@tinymce/tinymce-react": "^5.1.1",

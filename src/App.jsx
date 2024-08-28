@@ -23,7 +23,8 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="/blog/:userId/:slug" element={<Blog />} />
+          <Route path='write-blog' element={<Write/>} />
+          <Route path='membership' element={<Membership/>} />
         </Routes>
       </BrowserRouter>
     </>
