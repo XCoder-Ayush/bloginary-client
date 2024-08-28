@@ -11,8 +11,6 @@ function Auth() {
 
   useEffect(() => {
     if (previewUrl) {
-      // Scroll to the bottom when the preview image is set
-      
     }
   }, [previewUrl]);
 
@@ -36,17 +34,18 @@ function Auth() {
       const result = await userService.authservice(data, selectedFile);
       console.log('File uploaded successfully:', result);
 
-      // Clear the image state after successful upload
+     
+
       setImage('');
 
       if (result.fileUrl) {
-        // Optional: Uncomment if you want to display the uploaded file URL
-        // setImage(result.fileUrl);
+        setImage(result.fileUrl);
       } else {
         console.log('File URL not returned by the server.');
       }
     } catch (error) {
       console.log('Error during file upload:', error);
+
     }
   };
 
@@ -60,8 +59,8 @@ function Auth() {
         />
       </div>
 
-      <div className="w-full lg:w-1/2 flex flex-col items-center p-6 lg:p-12 overflow-auto">
-        <h1 className="text-2xl lg:text-3xl font-semibold text-black mb-4 text-center">
+      <div className="w-full lg:w-1/2 flex flex-col items-center p-6 lg:p-12 overflow-auto lg:ml-[-2rem]">
+        <h1 className="text-xl lg:text-3xl font-semibold text-black ">
           Register Your Details
         </h1>
         <div className="mt-4 flex items-center justify-center">
@@ -74,7 +73,6 @@ function Auth() {
               />
             </div>
           )}
-          {/* Optionally render uploaded image URL here */}
           {image && (
             <img
               src={image}
@@ -94,59 +92,52 @@ function Auth() {
             onChange={onFileChange}
           />
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className="w-full max-w-md mt-6 space-y-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="w-full max-w-md mt-6 space-y-4"
+        >
           <div>
-            <label htmlFor="username" className="block text-indigo-950">
-              User Name
-            </label>
             <Input
               type="text"
               id="username"
+              placeholder=" Username" 
               className="w-full p-2 mt-1 text-sm border rounded-xl border-slate-600"
               {...register('username')}
             />
           </div>
 
           <div>
-            <label htmlFor="firstName" className="block text-indigo-950">
-              First-Name
-            </label>
             <Input
               type="text"
               id="firstName"
+              placeholder="First Name" 
               className="w-full p-2 mt-1 text-sm border rounded-xl border-slate-600"
               {...register('firstName')}
             />
           </div>
           <div>
-            <label htmlFor="lastName" className="block text-indigo-950">
-              Last-Name
-            </label>
             <Input
               type="text"
               id="lastName"
+              placeholder="Last Name" 
               className="w-full p-2 mt-1 text-sm border rounded-xl border-slate-600"
               {...register('lastName')}
             />
           </div>
           <div>
-            <label htmlFor="password" className="block text-indigo-950">
-              Password
-            </label>
             <Input
               type="password"
               id="password"
+              placeholder="Password" 
               className="w-full p-2 mt-1 text-sm border rounded-xl border-slate-600"
               {...register('password')}
             />
           </div>
           <div>
-            <label htmlFor="email" className="block text-indigo-950">
-              Email-address
-            </label>
             <Input
               type="email"
               id="email"
+              placeholder="Email" 
               className="w-full p-2 mt-1 text-sm border rounded-xl border-slate-600"
               {...register('email')}
             />

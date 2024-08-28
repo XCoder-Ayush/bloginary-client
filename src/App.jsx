@@ -11,11 +11,13 @@ import Profile from './pages/Profile';
 import Membership from './pages/Membership';
 import Write from './pages/Write';
 import Auth from './pages/Auth';
+import { Toaster } from "@/components/ui/toaster"
 
 
 function App() {
   return (
     <>
+     <Toaster />
       <BrowserRouter>
         <Routes>
           <Route path="" element={<Landing />} />
@@ -29,6 +31,7 @@ function App() {
           <Route path='membership' element={<Membership/>} />
         </Routes>
       </BrowserRouter>
+     
     </>
   );
 }
