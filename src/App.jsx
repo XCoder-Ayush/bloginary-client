@@ -2,7 +2,6 @@ import { Routes, Route } from 'react-router-dom';
 import { BrowserRouter } from 'react-router-dom';
 // import viteLogo from '/vite.svg';
 import './index.css';
-import Home from './pages/Home';
 import Blogs from './pages/Blogs';
 import Services from './pages/Services';
 import Support from './pages/Support';
@@ -18,13 +17,13 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="" element={<Landing />} />
-          <Route path="home" element={<Home />} />
           <Route path="blogs" element={<Blogs />} />
           <Route path="services" element={<Services />} />
           <Route path="support" element={<Support />} />
           <Route path="profile" element={<Profile />} />
           <Route path='write-blog' element={<Write/>} />
           <Route path='membership' element={<Membership/>} />
+          <Route path='blog/:userId/:slug' element={<Blog/>} />
         </Routes>
       </BrowserRouter>
     </>
