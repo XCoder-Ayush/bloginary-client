@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { HashRouter as Router } from "react-router-dom";
 import viteLogo from '/vite.svg';
 import './index.css';
 import Home from './pages/Home';
@@ -14,7 +14,7 @@ import Write from './pages/Write';
 function App() {
   return (
     <>
-      <BrowserRouter>
+      <Router>
         <Routes>
           <Route path="" element={<Landing />} />
           <Route path="home" element={<Home />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path='write-blog' element={<Write/>} />
           <Route path='membership' element={<Membership/>} />
         </Routes>
-      </BrowserRouter>
+      </Router>
     </>
   );
 }
