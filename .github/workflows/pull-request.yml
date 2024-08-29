@@ -1,7 +1,7 @@
-name: Deploy On Push To Main
+name: PR Build And Deploy
 
 on:
-  push:
+  pull_request:
     branches:
       - development
 
@@ -35,7 +35,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/development'
 
     steps:
       - name: Download Artifacts
@@ -49,3 +48,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
+          destination_dir: pr-${{ github.event.number }}
+
+      - name: Log Deploy Link
+        run: |
+          echo "Build Successfully Deployed. You can access the application @ https://xcoder-ayush.github.io/bloginary-client/pr-${{ github.event.number }}/"

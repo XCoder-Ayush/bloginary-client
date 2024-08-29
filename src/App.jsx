@@ -1,5 +1,5 @@
-import { Routes, Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom';
+import { Routes, Route, HashRouter } from 'react-router-dom';
+import { HashRouter as Router } from "react-router-dom";
 import viteLogo from '/vite.svg';
 import './index.css';
 import Home from './pages/Home';
@@ -18,7 +18,7 @@ function App() {
   return (
     <>
      <Toaster />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="" element={<Landing />} />
           <Route path="home" element={<Home />} />
@@ -30,7 +30,7 @@ function App() {
           <Route path='auth' element={<Auth/>}/>
           <Route path='membership' element={<Membership/>} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
      
     </>
   );
