@@ -4,13 +4,15 @@ on:
   pull_request:
     branches:
       - development
-
+permissions:
+  contents: write
+  pages: write
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pages: write
 
     steps:
