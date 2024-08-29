@@ -4,17 +4,16 @@ on:
   pull_request:
     branches:
       - development
+
 permissions:
+  id-token: write
   contents: write
   pages: write
+
 jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -40,9 +39,6 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      pages: write
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
