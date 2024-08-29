@@ -10,6 +10,7 @@ import Landing from './pages/Landing';
 import Profile from './pages/Profile';
 import Membership from './pages/Membership';
 import Write from './pages/Write';
+import Auth from './pages/Auth';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path="profile" element={<Profile />} />
           <Route path='write-blog' element={<Write/>} />
           <Route path='membership' element={<Membership/>} />
+          <Route path='auth' element={<Auth/>} />
         </Routes>
       </Router>
     </>

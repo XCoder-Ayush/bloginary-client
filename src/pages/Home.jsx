@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react';
+
 
 export default function Home() {
+
   return (
-    <h1>Home</h1>
-  )
+    <div className="min-h-screen flex items-center justify-center bg-white">
+   
+    </div>
+  );
 }
