@@ -11,11 +11,7 @@ export default defineConfig({
       '@': path.resolve('./src'),
     },
   },
-<<<<<<< HEAD
-});
-=======
   build: {
     outDir: './dist',
   },
 });
->>>>>>> development
