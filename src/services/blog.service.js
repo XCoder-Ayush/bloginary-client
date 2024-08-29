@@ -8,5 +8,6 @@ export default async function fetchBlogData(){
     { id: 6, title: 'Three.js', description: '3d library helps to improve data' },
   ];
 //Actual blog data will came from rest api
+
  return blogs;
 }

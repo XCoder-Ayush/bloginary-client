@@ -1,45 +1,61 @@
-name: PR Build and Deploy
+name: PR Build And Deploy
 
 on:
   pull_request:
     branches:
       - development
+
+permissions:
+  id-token: write
+  contents: write
+  pull-requests: write
+  pages: write
+  actions: write
+
 jobs:
   build:
+    name: Build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout code
+      - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 18 
+          node-version: 20
 
       - name: Install dependencies
-        run: npm install
+        uses: bahmutov/npm-install@v1
 
-      - name: Build the project
+      - name: Build project
         run: npm run build
 
-      - name: Deploy to GitHub Pages
-        if: github.event.pull_request.merged == false
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Upload production-ready build files
+        uses: actions/upload-artifact@v2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
-          destination_dir: pr-${{ github.event.number }}
+          name: production-files
+          path: ./dist
 
   deploy:
+    name: Deploy
     needs: build
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == false
-
     steps:
-      - name: Deploy PR to GitHub Pages
+      - name: Download Artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: production-files
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
+          publish_branch: gh-pages
           destination_dir: pr-${{ github.event.number }}
+
+      - name: Log Deploy Link
+        run: |
+          echo "Build Successfully Deployed. You can access the application @ https://xcoder-ayush.github.io/bloginary-client/pr-${{ github.event.number }}/"
