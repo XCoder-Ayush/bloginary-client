@@ -8,6 +8,7 @@ on:
 permissions:
   id-token: write
   contents: write
+  pull-requests: write
   pages: write
   actions: write
 
@@ -50,7 +51,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ secrets.ACTIONS_BOT_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist
           publish_branch: gh-pages
           destination_dir: pr-${{ github.event.number }}
