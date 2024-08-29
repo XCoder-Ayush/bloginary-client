@@ -9,6 +9,9 @@ jobs:
   build:
     name: Build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
 
     steps:
       - name: Checkout repo
@@ -35,7 +38,9 @@ jobs:
     name: Deploy
     needs: build
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: read
+      pages: write
     steps:
       - name: Download Artifacts
         uses: actions/download-artifact@v2
