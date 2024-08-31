@@ -178,7 +178,7 @@ export default function Support() {
                     type="text"
                     name="name"
                     id="name"
-                    placeholder="Sarah Parker"
+                    placeholder="Bimal Saha"
                     required
                   />
                 </div>
