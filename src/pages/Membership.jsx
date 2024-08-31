@@ -25,7 +25,7 @@ const Membership = () => {
             <Navbar />
 
             <div className="flex flex-col gap-10 py-10 px-10 items-center sm:px-10 md:px-30 lg:px-20">
-                <div className="w-20 h-20">
+                <div className="w-20 h-20 mt-5">
                     <img className="object-cover w-full h-full" src="https://t4.ftcdn.net/jpg/03/49/37/73/360_F_349377375_ffnj0RHK52KsooH7IBdtpjNtdEP7bKM7.jpg" alt="" />
                 </div>
                 <div className="text-center w-3/4">
