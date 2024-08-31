@@ -48,11 +48,10 @@ function Navbar() {
           id="navbar-sticky"
         >
           <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li>
+          <li>
               <Link
                 to="/"
-                className="block py-2 px-3 text-black bg-slate-200 rounded md:bg-transparent md:text-blue-700 md:p-0 md:dark:text-blue-500"
-                aria-current="page"
+                className="block py-2 px-3 text-gray-900 rounded hover:bg-slate-500 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
               >
                 Home
               </Link>
@@ -82,24 +81,26 @@ function Navbar() {
               </Link>
             </li>
             <li className="md:hidden">
-              <Button
-                className="px-8 py-4 mt-2 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
-                variant="destructive"
-              >
-                Login
-              </Button>
+              <Link to="/auth">
+                <Button
+                  className="px-8 py-4 mt-2 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
+                  variant="destructive"
+                >
+                  Login
+                </Button>
+              </Link>
             </li>
           </ul>
         </div>
 
         <div className="hidden md:flex md:order-2 space-x-3">
           <Link to="/auth">
-          <Button
-            className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
-            variant="destructive"
-          >
-            Login
-          </Button>
+            <Button
+              className="px-8 py-4 rounded-[6px] bg-black text-white hover:bg-white hover:text-black hover:border-black hover:border-2"
+              variant="destructive"
+            >
+              Login
+            </Button>
           </Link>
           <Link to="/write-blog" className="px-2 py-2 rounded-[6px]">
             <i className="fa-solid fa-pen-nib fa-xl"></i>
